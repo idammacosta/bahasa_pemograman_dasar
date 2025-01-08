@@ -1,9 +1,10 @@
 def get_kelas(nim):
-
-    kode_kelas = int(nim[12])
-    if kode_kelas == 0:
+    if len(nim) < 6:
+        return "NIM tidak valid (kurang dari 6 karakter)"
+    kode_kelas = nim[5]  # Ambil karakter ke-6
+    if kode_kelas == "0":
         return "Reguler"
-    elif kode_kelas == 1:
+    elif kode_kelas == "1":
         return "Karyawan"
     else:
-        return "Kelas tidak dikenal"
+        return "Kode kelas tidak valid"

@@ -1,11 +1,12 @@
 def get_biaya(nim):
-
-    kode_biaya = int(nim[10])
-    if kode_biaya == 1:
-        return "9.600.000"
-    elif kode_biaya == 2:
-        return "9.100.000"
-    elif kode_biaya == 3:
-        return "9.300.000"
+    if len(nim) < 4:
+        return 0  # Biaya tidak valid
+    kode_jurusan = nim[2:4]  # Ambil karakter ke-3 dan ke-4
+    if kode_jurusan == "11":
+        return 9600000  # Biaya Teknik Informatika
+    elif kode_jurusan == "12":
+        return 9100000  # Biaya Sistem Informasi
+    elif kode_jurusan == "13":
+        return 9300000  # Biaya Sistem Komputer
     else:
-        return "Biaya tidak diketahui"
+        return 0  # Kode jurusan tidak valid
